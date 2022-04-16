@@ -18,7 +18,7 @@ public class UserDao  {
     @Transactional
     public void saveUser(User user) {
         entityManager.persist(user);
-        entityManager.close();
+
     }
 
     @Transactional
