@@ -1,7 +1,7 @@
-package controllers;
+package project.controllers;
 
-import dao.PersonDAO;
-import models.Person;
+import project.dao.PersonDAO;
+import project.models.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

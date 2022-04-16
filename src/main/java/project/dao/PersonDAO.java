@@ -1,6 +1,6 @@
-package dao;
+package project.dao;
 
-import models.Person;
+import project.models.Person;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
