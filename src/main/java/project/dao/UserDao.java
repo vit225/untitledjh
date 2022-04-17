@@ -41,7 +41,7 @@ public class UserDao  {
 
 
     @Transactional
-    public void updateUser(User updateUser) {
-        entityManager.merge(updateUser);
+    public void updateUser(User user) {
+        entityManager.merge(user);
     }
 }
