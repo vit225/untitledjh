@@ -18,7 +18,7 @@ public class UserDao  {
     @Transactional
     public void saveUser(User user) {
         entityManager.persist(user);
-
+        entityManager.close();
     }
 
     @Transactional
@@ -27,7 +27,7 @@ public class UserDao  {
     }
 
     @Transactional
-    public void deleteById(Long id) {
+    public void deleteById(long id) {
         User user = entityManager.find(User.class, id);
         if (user != null) {
             entityManager.remove(user);
@@ -35,7 +35,13 @@ public class UserDao  {
     }
 
     @Transactional
-    public User findById(Long id) {
+    public User findById(long id) {
         return entityManager.find(User.class, id);
+    }
+
+
+    @Transactional
+    public void updateUser(User updateUser) {
+        entityManager.merge(updateUser);
     }
 }

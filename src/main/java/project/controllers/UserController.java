@@ -3,12 +3,11 @@ package project.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import project.dao.UserDao;
 import project.models.User;
 
-import javax.validation.Valid;
+
 import java.util.List;
 
 @Controller
@@ -34,7 +33,7 @@ public class UserController {
     }
 
     @PostMapping("/create")
-    public String createUser(User user){
+    public String createUser(@ModelAttribute("user") User user){
         userDao.saveUser(user);
         return "redirect:/users";
     }
@@ -53,8 +52,8 @@ public class UserController {
     }
 
     @PostMapping("/update")
-    public String updateUser(User user){
-        userDao.saveUser(user);
+    public String updateUser(@ModelAttribute("user") User user){
+        userDao.updateUser(user);
         return "redirect:/users";
     }
 }
